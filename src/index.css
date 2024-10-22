@@ -1,61 +1,154 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
+
 
 p, h1, h2, h3, h4, h5, div {
-  color: white;
+    color: white;
 }
 
 p {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .header-text{
-  font-weight: bold;
-  font-size: 4em;
-  padding: 2.5em;
+    font-weight: bold;
+    font-size: 4em;
+    padding: 2.5em;
 }
 
 .containerItem {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures the navbar is above other content */
+    background-color: black; /* Set a background color if needed */
+    padding: 10px 20px;
+  }
+  
+
 .containerItem h2 {
-  font-weight: bolder;
-  font-size: 2.5rem;
+    font-weight: bolder;
+    font-size: 2.5rem;
 }
 
 .photos {
-  width: 500px;
-  border-radius: 50%;
+    width: 500px;
+    border-radius: 50%;
 }
 
 .right-image {
-  margin-left: 15.5em;
+    margin-left: 15.5em;
 }
 
 .section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding: 5em;
-  margin-top: 3.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 5em;
+    margin-top: 3.5em;
 }
 
 
-
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 5em;
+    margin-top: 3.5em;
+}
 
 .details-right {
-  grid-column: 2;
-  grid-row: 1;
+    grid-column: 2;
+    grid-row: 1;
 }
 
 .left-image {
-  grid-column: 1;
-  grid-row: 1;
+    grid-column: 1;
+    grid-row: 1;
 }
+
+.regular-section {
+    margin-top: 14.5em;
+}
+
+.regular-section h2 {
+    text-align: center;
+}
+
+.regular-section img, 
+.column-section img {
+    width: 75%;
+}
+
+
+.column-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 5em;
+    margin-top: 3.5em;
+}
+
+
+
+@media screen and (max-width: 1260px) {
+
+    * {
+        text-align: center;
+    }
+
+    .section, .split {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .details-right {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .section img {
+        padding: 20px;
+    }
+
+    .left-image {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .right-image {
+        margin-left: 0;
+    }
+
+    .regular-section {
+        margin-top: 7.5em;
+    }
+
+    .column-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
