@@ -115,7 +115,7 @@ const About = () => {
       <div className="regular-section">
         <h2>Who inspires us?</h2>
         <div className="split">
-          <img src="./public/brotherhood.jpg" alt="Group of people standing" />
+          <img src="./public/people/pose.jpg" alt="Group of people standing" />
           <div>
             <p>Our inspiration and who we look up to is the Prophet Muhammed, <i>Peace be upon him</i></p>
             <p>The Prophet, peace and blessings be upon him, said, <strong><i>“A man is upon the religion of his best friend, so let one of you look at whom he befriends.”</i></strong> Source: Sunan al-Tirmidhī 2378</p>
