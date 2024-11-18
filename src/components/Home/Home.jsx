@@ -10,9 +10,16 @@ const Home = () => {
   const point = useRef(null);
   const photoAbout = useRef(null);
   const textAbout = useRef(null);
-  const images = gsap.utils.toArray('.scroll-image');
-  const containerRef = useRef(null);
   const testimonials = gsap.utils.toArray('.testimonial');
+
+  const images = [
+    "public/people/pose.jpg",
+    "public/people/Lpose.jpg",
+    "public/people/beach.jpg",
+    "public/people/3man.jpg", 
+    "public/people/playing.jpg",
+    "public/hike.jpg"
+  ];
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -77,17 +84,6 @@ const Home = () => {
       } 
     );
 
-    gsap.to(images, {
-      x: "100vw",
-      ease: "linear",
-      duration: 10, // Duration of one full cycle
-      repeat: -1, // Infinite loop
-      yoyo: true, // Repeat back to start
-      modifiers: {
-        xPercent: gsap.utils.wrap(-100, 0), // Creates the infinite looping effect
-      },
-    });
-
     testimonials.forEach((testimonial) => {
       gsap.fromTo(
         testimonial,
@@ -99,7 +95,7 @@ const Home = () => {
           ease: 'sine.in',
           scrollTrigger: {
             trigger: testimonial,
-            start: 'top 80%',
+            start: 'top 60%',
             end: 'bottom 20%',
             toggleActions: 'play none none none',
           },
@@ -107,7 +103,7 @@ const Home = () => {
       );
     });
 
-  }, [images, testimonials]);
+  }, [testimonials]);
 
   return (
     <div className="overflow-hidden ">
@@ -161,32 +157,25 @@ const Home = () => {
 
 
       {/* This is the third section */}
-      <div className='flex bg-dark text-lime-50 h-[45vh] py-20'>
-        <div className='m-0 p-0 relative flex w-[100vw] '>
-          <div ref={containerRef} className=' justify-center w-[100vw] py-[10px] flex flex-nowrap gap-10 overflow-hidden'>
-            <img src="public/people/pose.jpg" className="h-[400px] scroll-image border-2 border-black" alt="Logo" />
-            <img src="public/people/Lpose.jpg" className=" h-[400px] scroll-image border-2 border-black"  alt="Logo" />
-            <img src="public/people/beach.jpg" className=" h-[400px] scroll-image border-2 border-black" alt="Logo" />
-            <img src="public/people/3man.jpg" className=" h-[400px] scroll-image border-2 border-black" alt="Logo" />
-            <img src="public/people/playing.jpg" className="h-[400px] scroll-image border-2 border-black" alt="Logo" />
-            <img src="public/hike.jpg" className=" h-[400px] scroll-image border-2 border-black" alt="Logo" />
-            <img src="public/people/pose.jpg" className="h-[400px] scroll-image border-2 border-black" alt="Logo" />
-            <img src="public/people/Lpose.jpg" className=" h-[400px] scroll-image border-2 border-black"  alt="Logo" />
-            <img src="public/people/beach.jpg" className=" h-[400px] scroll-image border-2 border-black" alt="Logo" />
-            <img src="public/people/3man.jpg" className=" h-[400px] scroll-image border-2 border-black" alt="Logo" />
-            <img src="public/people/playing.jpg" className="h-[400px] scroll-image border-2 border-black" alt="Logo" />
-            <img src="public/hike.jpg" className=" h-[400px] scroll-image border-2 border-black" alt="Logo" />
-          </div>
+      <div className='flex bg-dark text-lime-50 h-[45vh] py-20 mb-20'>
+        <div className='overflow-x-auto scroll-smooth snap-x snap-mandatory flex space-x-4'>
+          {images.map((src, index) => (
+            <img 
+              key={index} 
+              src={src} 
+              className="h-[400px] snap-center flex-shrink-0 border-2 border-black" 
+            />
+          ))}
         </div>
       </div>
 
       {/* This is the fourth section */}
-      <div className='bg-dark h-[85vh]'>
+      <div className='bg-dark min-h-[85vh]'>
         <h2 className='w-screen flex justify-center text-light text-4xl mb-20'>Testimonials</h2>
-          
+
         {/* Testimonial Section */}
-        <div className='flex justify-center items-center flex-col gap-20'>
-          <div className='flex items-center gap-10'>
+        <div ref={testimonials} className='flex justify-center items-center flex-col gap-20'>
+          <div className='flex flex-col md:flex-row items-center gap-10'>
             {/* Testimonial Image */}
             <img
               src='public/people/pp1.jpg' 
@@ -200,21 +189,21 @@ const Home = () => {
             </div>
           </div>
 
-          <div className='flex items-center gap-10'>
+          <div className='flex flex-col md:flex-row items-center gap-10'>
+            {/* Testimonial Image - First on mobile, last on desktop */}
+            <img 
+              src='public/people/pp2.jpg' 
+              alt='Person 2' 
+              className='md:order-last w-[150px] h-[150px] object-cover rounded-full border-2 border-light'
+            />
             {/* Testimonial Text */}
             <div className='text-light text-lg max-w-[500px] text-right'>
               <p>&quot;Attending the retreat was one of the best decisions I&apos;ve ever made. It brought me closer to my brothers and deepened my spiritual connection. I left feeling refreshed and inspired.&quot;</p>
               <span className='block mt-4 text-sm font-bold'>- Brother B</span>
             </div>
-            {/* Testimonial Image */}
-            <img 
-              src='public/people/pp2.jpg' 
-              alt='Person 2' 
-              className='w-[150px] h-[150px] object-cover rounded-full border-2 border-light'
-            />
           </div>
 
-          <div className='flex items-center gap-10'>
+          <div className='flex flex-col md:flex-row items-center gap-10'>
             {/* Testimonial Image */}
             <img 
               src='public/people/pp3.jpg' 

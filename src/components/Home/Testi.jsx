@@ -82,7 +82,7 @@ const Testi = () => {
           <p>&quot;The retreat provided a perfect balance of reflection, camaraderie, and growth. It helped me find clarity and a sense of purpose. I’m grateful for the bond we built.&quot;</p>
           <span className='block mt-4 text-sm font-bold'>- Brother C</span>
         </div>
-      </div>
+        </div>
 
             <button 
               className='bg-dark text-light p-2 rounded-lg transition transform hover:scale-105 mt-10 border-light border-2' 
