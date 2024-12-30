@@ -8,9 +8,6 @@ const Home = () => {
   const rightImgRef = useRef(null);
   const textTitle = useRef(null);
   const point = useRef(null);
-  const photoAbout = useRef(null);
-  const textAbout = useRef(null);
-  const testimonials = gsap.utils.toArray('.testimonial');
 
   const images = [
     "public/people/pose.jpg",
@@ -24,86 +21,66 @@ const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
+    const timeline = gsap.timeline();
 
-    gsap.fromTo(leftImgRef.current, 
-      { x: '-100vw', opacity: 0 }, 
-      { x: '0%', opacity: 1, duration: 5.5, ease: 'power3.out' } 
+    // Animate left and right images simultaneously
+    timeline.fromTo(
+      leftImgRef.current,
+      { x: '-100vw', opacity: 0 },
+      { x: '0%', opacity: 1, duration: 5.5, ease: 'power3.out' },
+      0 // Start at the beginning of the timeline
     );
 
-    gsap.fromTo(rightImgRef.current, 
-      { x: '100vw', opacity: 0 }, 
-      { x: '0%', opacity: 1, duration: 5.5, ease: 'power3.out' } 
+    timeline.fromTo(
+      rightImgRef.current,
+      { x: '100vw', opacity: 0 },
+      { x: '0%', opacity: 1, duration: 5.5, ease: 'power3.out' },
+      0 // Start at the beginning of the timeline (same time as leftImg)
     );
 
-    gsap.fromTo(textTitle.current, 
-      { y: 80, opacity: 0 }, 
-      { y: 0, opacity: 1, duration: 3.5, delay: 3.5, ease: 'power3.out' } 
+    // Animate textTitle after left and right images finish
+    timeline.fromTo(
+      textTitle.current,
+      { y: 80, opacity: 0 },
+      { y: 0, opacity: 1, duration: 3.5, ease: 'power3.out' },
+      '-=2' // Start right after the previous animations finish
     );
 
-    gsap.fromTo(point.current, 
-      { y: 0, opacity: 0 }, // Starting state
+    // Animate the point one second after textTitle finishes
+    timeline.fromTo(
+      point.current,
+      { y: 0, opacity: 0 },
       { 
-        y: 60,           // Move down by 60px
-        opacity: 1,      // Fade out
-        duration: 1.5,   // Duration of each down/up cycle
-        ease: 'sine.out', // Smooth motion
-        repeat: -1,      // Repeat infinitely
-        delay: 4.5,      // Start after a 4.5 second delay
-      }
-    );
-    
-    gsap.fromTo(photoAbout.current, 
-      { x: "-100vw"}, 
-      { 
-      x: 0, 
-      opacity: 1, 
-      duration: 2.5, 
-      ease: 'sine.out',
-      scrollTrigger: {
-        trigger: photoAbout.current,
-        start: 'top 90%',
-        end: 'top 30%',
-        toggleActions: 'play none none none'
-      }
-      } 
+        y: 60, 
+        opacity: 1, 
+        duration: 1.5, 
+        ease: 'sine.out', 
+        repeat: -1, 
+      },
+      '-=1' // Start 1 second after textTitle animation
     );
 
-    gsap.fromTo(textAbout.current, 
-      { x: "100vw"}, 
-      { 
-      x: 0, 
-      opacity: 1, 
-      duration: 2.5, 
-      ease: 'sine.out',
-      scrollTrigger: {
-        trigger: photoAbout.current,
-        start: 'top 90%',
-        end: 'top 30%',
-        toggleActions: 'play none none none'
-      }
-      } 
-    );
-
-    testimonials.forEach((testimonial) => {
-      gsap.fromTo(
-        testimonial,
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 3,
-          ease: 'sine.in',
-          scrollTrigger: {
-            trigger: testimonial,
-            start: 'top 60%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
+    const container = document.querySelector(".image-container");
+    const containerWidth = container.scrollWidth; // Total width of the container
+  
+    // Duplicate the images to create a seamless infinite scroll
+    gsap.to(container, {
+      x: `-${containerWidth / 2}px`, // Animate to half of the container width
+      duration: 20, // Adjust speed as needed
+      repeat: -1, // Infinite repetition
+      ease: "linear", // Smooth linear animation
+      modifiers: {
+        x: gsap.utils.wrap(-containerWidth, 0), // Wrap the animation seamlessly
+      },
     });
 
-  }, [testimonials]);
+    // Optional cleanup if animations need to stop when the component unmounts
+    return () => {
+      timeline.kill();
+      gsap.killTweensOf(container);
+    };
+    
+  }, []);
 
   return (
     <div className="overflow-hidden ">
@@ -129,7 +106,6 @@ const Home = () => {
       <div className='bg-dark h-[100vh] flex flex-col md:flex-row justify-center items-center'>
         <div className='m-0 p-0 w-full md:w-[50vw] flex justify-center items-center'>
           <img 
-            ref={photoAbout} 
             src="public/people/sandLogo.jpg" 
             className="w-[250px] sm:w-[300px] md:w-[400px] lg:w-[500px] rounded-full md:rounded-lg shadow-lg mx-2" 
             alt="Sand" 
@@ -137,12 +113,11 @@ const Home = () => {
         </div>
 
         <div className='m-0 p-0 w-full md:w-[50vw] flex justify-center items-center'>
-          <div ref={textAbout} className='flex flex-col items-center'>
+          <div className='flex flex-col items-center'>
             <div className='bg-dark flex flex-col items-center rounded-lg shadow-md p-6 w-[90%] sm:w-[80%] md:w-[500px] lg:w-[600px]'>
               <h2 className="text-3xl text-white mb-4">Our Mission</h2>
               <p className="text-center text-gray-300 text-sm sm:text-base">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
+              At ЯIIR, we aim to awaken the desire already within you to do something meaningful. By hosting events and building a strong community, we&apos;re proving that our faith isn&apos;t in conflict with the modern West, but can thrive without compromise.</p>
             </div>
             <button
               className="bg-dark text-light mt-4 p-2 w-[80%] sm:w-[60%] md:w-[200px] rounded-lg transition transform hover:scale-105 border-2 border-light"
@@ -157,13 +132,21 @@ const Home = () => {
 
 
       {/* This is the third section */}
-      <div className='flex bg-dark text-lime-50 h-[45vh] py-20 mb-20'>
-        <div className='overflow-x-auto scroll-smooth snap-x snap-mandatory flex space-x-4'>
+      <div className="flex bg-dark text-lime-50 h-[45vh] py-20 mb-20">
+        <div className="image-container flex space-x-4 overflow-hidden w-full">
           {images.map((src, index) => (
-            <img 
-              key={index} 
-              src={src} 
-              className="h-[400px] snap-center flex-shrink-0 border-2 border-black" 
+            <img
+              key={index}
+              src={src}
+              className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
+            />
+          ))}
+          {/* Duplicate images to ensure a smooth loop */}
+          {images.map((src, index) => (
+            <img
+              key={`duplicate-${index}`}
+              src={src}
+              className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
             />
           ))}
         </div>
@@ -174,7 +157,7 @@ const Home = () => {
         <h2 className='w-screen flex justify-center text-light text-4xl mb-20'>Testimonials</h2>
 
         {/* Testimonial Section */}
-        <div ref={testimonials} className='flex justify-center items-center flex-col gap-20'>
+        <div className='flex justify-center items-center flex-col gap-20'>
           <div className='flex flex-col md:flex-row items-center gap-10'>
             {/* Testimonial Image */}
             <img
@@ -185,7 +168,7 @@ const Home = () => {
             {/* Testimonial Text */}
             <div className='text-light text-lg max-w-[500px]'>
               <p>&quot;This retreat was a life-changing experience for me. The brotherhood, the spiritual growth, and the sense of community made it unforgettable.&quot;</p>
-              <span className='block mt-4 text-sm font-bold'>- Brother A</span>
+              <span className='block mt-4 text-sm font-bold'>- Brother Sami</span>
             </div>
           </div>
 
@@ -199,7 +182,7 @@ const Home = () => {
             {/* Testimonial Text */}
             <div className='text-light text-lg max-w-[500px] text-right'>
               <p>&quot;Attending the retreat was one of the best decisions I&apos;ve ever made. It brought me closer to my brothers and deepened my spiritual connection. I left feeling refreshed and inspired.&quot;</p>
-              <span className='block mt-4 text-sm font-bold'>- Brother B</span>
+              <span className='block mt-4 text-sm font-bold'>- Brother Shamas</span>
             </div>
           </div>
 
@@ -213,7 +196,7 @@ const Home = () => {
             {/* Testimonial Text */}
             <div className='text-light text-lg max-w-[500px]'>
               <p>&quot;The retreat provided a perfect balance of reflection, camaraderie, and growth. It helped me find clarity and a sense of purpose. I’m grateful for the bond we built.&quot;</p>
-              <span className='block mt-4 text-sm font-bold'>- Brother C</span>
+              <span className='block mt-4 text-sm font-bold'>- Brother Zaheer</span>
             </div>
           </div>
 

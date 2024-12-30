@@ -4,24 +4,30 @@ import { gsap } from 'gsap';
 const Contact = () => {
 
   useEffect(() => {
+    // Create a GSAP timeline
+    const tl = gsap.timeline();
 
-    gsap.fromTo(
-      '.Rulers',
-      { opacity: 0, ease: 'sine.out' },
-      { opacity: 1, duration:2, delay: 2.5 }
-    );
-
-    gsap.fromTo(
+    // Animate text first
+    tl.fromTo(
       '.Founders',
       { y: 200, opacity: 0 },
-      { y: 0, opacity: 1, duration: 2.5, ease: 'sine.out', stagger: 0.6 }
-    );
+      { y: 0,   opacity: 1, duration: 2.5, ease: 'sine.out', stagger: 0.6 }
+    )
+      // Animate image after text
+      .fromTo(
+        '.Rulers',
+        { x: 400, opacity: 0, ease: 'sine.out' },
+        { x: 0,   opacity: 1, duration: 2 }
+      );
 
-    
+    // Clean up timeline on component unmount
+    return () => {
+      tl.kill();
+    };
   }, []);
 
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center py-12 px-4 pt-16"> {/* Added pt-16 */}
+    <div className="min-h-screen bg-black flex flex-col items-center py-12 px-4 pt-16">
       {/* Content Section */}
       <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between m-12">
         {/* Left Side: R2R Description */}
@@ -36,19 +42,19 @@ const Contact = () => {
         {/* Right Side: Image */}
         <div className="w-full md:w-1/3 flex justify-center items-center mt-8">
           <img
-            src="public\people\group.jpg"
+            src="public\\people\\group.jpg"
             alt="Rulers"
             className="Rulers rounded-lg shadow-lg"
             style={{ width: '400px', height: '300px' }}
           />
         </div>
       </div>
-      <div className="mt-20 w-full max-w-6xl sm:border-2 border-white rounded-lg">
 
       {/* Call to Action */}
-      <div className="mt-12 text-center">
-        <h2 className="text-2xl font-bold text-white">Join the R2R Brotherhood - A Journey Together!</h2>
-      </div>
+      <div className="mt-20 w-full max-w-6xl sm:border-2 border-white rounded-lg">
+        <div className="mt-12 text-center">
+          <h2 className="text-2xl font-bold text-white">Join the R2R Brotherhood - A Journey Together!</h2>
+        </div>
 
         {/* Contact Form */}
         <div className="w-full max-w-6xl shadow-lg rounded-lg p-8">

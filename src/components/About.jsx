@@ -85,7 +85,7 @@ const About = () => {
         <div className="details-left" ref={firstTextRef}>
           <h2>Our Mission</h2>
           <p>
-            At <i>ЯIIR</i>, we aim to awaken the desire already within you to do something meaningful. By hosting events and building a strong community, we're proving that our faith isn't in conflict with the modern West, but can thrive without compromise.
+            At <i>ЯIIR</i>, we aim to awaken the desire already within you to do something meaningful. By hosting events and building a strong community, we&apos;re proving that our faith isn&apos;t in conflict with the modern West, but can thrive without compromise.
           </p>
         </div>
         <img ref={rightImageRef} className="photos right-image" src="./public/group.jpg" alt="Group" />
@@ -95,7 +95,7 @@ const About = () => {
         <div className="details-right" ref={secondTextRef}>
           <h2>What is R2R?</h2>
           <p>
-            R2R stands for 'Road To Success', this brand symbolizes the initial road everyone has to go through in our lives, and from that road, we keep driving to the point of success, with the hope, trust, and belief that God almighty will take us there.
+            R2R stands for &apos;Road To Success&apos;, this brand symbolizes the initial road everyone has to go through in our lives, and from that road, we keep driving to the point of success, with the hope, trust, and belief that God almighty will take us there.
           </p>
         </div>
         <img ref={leftImageRef} className="left-image" src="./public/logo.png" alt="Logo" />
@@ -105,7 +105,7 @@ const About = () => {
         <h2>What We Stand By</h2>
         <div className="split">
           <div>
-            <p>Our morals, values, and way of life all stem from one thing - Islam. We as Muslims strive to become better by coming closer to God.</p>
+            <p className="mb-4">Our morals, values, and way of life all stem from one thing - Islam. We as Muslims strive to become better by coming closer to God.</p>
             <p>The relentless drive, discipline, and enthusiasm are aspects and characteristics that we as Muslims uphold.</p>
           </div>
           <img src="./public/hike.jpg" alt="Group of people hiking" />
