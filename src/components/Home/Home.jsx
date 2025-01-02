@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import '././App.css';
+import '../../App.css';
 
 const Home = () => {
   const leftImgRef = useRef(null);
@@ -9,14 +9,6 @@ const Home = () => {
   const textTitle = useRef(null);
   const point = useRef(null);
 
-  const images = [
-    "/people/pose.jpg",
-    "/people/Lpose.jpg",
-    "/people/beach.jpg",
-    "/people/3man.jpg", 
-    "/people/playing.jpg",
-    "/hike.jpg"
-  ];
   
   gsap.registerPlugin(ScrollTrigger);
 
@@ -134,32 +126,32 @@ const Home = () => {
       <div className="flex bg-dark text-lime-50 h-[45vh] py-20 mb-20">
         <div className="image-container flex space-x-4 overflow-hidden w-full">
           <img
-            src=public\people\pose.JPG
+            src="/people/pose.JPG"
             className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
             alt="Pose"
           />
           <img
-            src="/people/Lpose.jpg"
+            src="/people/Lpose.JPG"
             className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
             alt="Lpose"
           />
           <img
-            src="/people/beach.jpg"
+            src="/people/beach.JPG"
             className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
             alt="Beach"
           />
           <img
-            src="/people/3man.jpg"
+            src="/people/3man.JPG"
             className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
             alt="3man"
           />
           <img
-            src="/people/playing.jpg"
+            src="/people/playing.JPG"
             className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
             alt="Playing"
           />
           <img
-            src="/hike.jpg"
+            src="/hike.JPG"
             className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
             alt="Hike"
           />
