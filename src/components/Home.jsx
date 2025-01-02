@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import '../../App.css';
+import '../App.css';
 
 const Home = () => {
   const leftImgRef = useRef(null);
@@ -81,8 +81,8 @@ const Home = () => {
       <div className='flex bg-dark h-screen justify-center items-center flex-col'>
         <div className="flex justify-center items-center flex-col">
           <div className='flex'>
-            <img ref={leftImgRef} src="public/leftLogo.png" className="text-5xl" alt="Logo" />
-            <img ref={rightImgRef} src="public/rightLogo.png" className="text-5xl" alt="Logo" />
+            <img ref={leftImgRef} src="/leftLogo.png" className="text-5xl" alt="Logo" />
+            <img ref={rightImgRef} src="/rightLogo.png" className="text-5xl" alt="Logo" />
           </div>
           <h2 ref={textTitle} className="text-light p-10 tracking-widest text-2xl hidden md:block" style={{ letterSpacing: '0.4em' }}>R O A D 2 R I G H T E O U S N E S S</h2> 
         </div>

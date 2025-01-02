@@ -88,7 +88,7 @@ const About = () => {
             At <i>ЯIIR</i>, we aim to awaken the desire already within you to do something meaningful. By hosting events and building a strong community, we&apos;re proving that our faith isn&apos;t in conflict with the modern West, but can thrive without compromise.
           </p>
         </div>
-        <img ref={rightImageRef} className="photos right-image" src="./public/group.jpg" alt="Group" />
+        <img ref={rightImageRef} className="photos right-image" src="/group.jpg" alt="Group" />
       </div>
 
       <div className="section">
@@ -98,7 +98,7 @@ const About = () => {
             R2R stands for &apos;Road To Success&apos;, this brand symbolizes the initial road everyone has to go through in our lives, and from that road, we keep driving to the point of success, with the hope, trust, and belief that God almighty will take us there.
           </p>
         </div>
-        <img ref={leftImageRef} className="left-image" src="./public/logo.png" alt="Logo" />
+        <img ref={leftImageRef} className="left-image" src="/logo.png" alt="Logo" />
       </div>
 
       <div className="regular-section" ref={thirdTextRef}>
@@ -108,14 +108,14 @@ const About = () => {
             <p className="mb-4">Our morals, values, and way of life all stem from one thing - Islam. We as Muslims strive to become better by coming closer to God.</p>
             <p>The relentless drive, discipline, and enthusiasm are aspects and characteristics that we as Muslims uphold.</p>
           </div>
-          <img src="./public/hike.jpg" alt="Group of people hiking" />
+          <img src="/hike.jpg" alt="Group of people hiking" />
         </div>
       </div>
 
       <div className="regular-section">
         <h2>Who inspires us?</h2>
         <div className="split">
-          <img src="./public/people/pose.jpg" alt="Group of people standing" />
+          <img src="/people/pose.jpg" alt="Group of people standing" />
           <div>
             <p>Our inspiration and who we look up to is the Prophet Muhammed, <i>Peace be upon him</i></p>
             <p>The Prophet, peace and blessings be upon him, said, <strong><i>“A man is upon the religion of his best friend, so let one of you look at whom he befriends.”</i></strong> Source: Sunan al-Tirmidhī 2378</p>

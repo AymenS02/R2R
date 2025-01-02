@@ -42,7 +42,7 @@ const Contact = () => {
         {/* Right Side: Image */}
         <div className="w-full md:w-1/3 flex justify-center items-center mt-8">
           <img
-            src="public\\people\\group.jpg"
+            src="/people/group.jpg"
             alt="Rulers"
             className="Rulers rounded-lg shadow-lg"
             style={{ width: '400px', height: '300px' }}
@@ -101,8 +101,8 @@ const Contact = () => {
       {/* Contact Information */}
       <div className="mt-20 w-full max-w-6xl">
         <div className="flex gap-6 md:justify-start justify-center">
-          <img className="w-10" src="public\ig.png" />
-          <img className="w-10" src="public\yt.png" />
+          <img className="w-10" src="/ig.png" />
+          <img className="w-10" src="/yt.png" />
         </div>
       </div>
     </div>
