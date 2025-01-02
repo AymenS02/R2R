@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import '../../App.css';
+import '././App.css';
 
 const Home = () => {
   const leftImgRef = useRef(null);
@@ -10,12 +10,12 @@ const Home = () => {
   const point = useRef(null);
 
   const images = [
-    "./people/pose.jpg",
-    "./people/Lpose.jpg",
-    "./people/beach.jpg",
-    "./people/3man.jpg", 
-    "./people/playing.jpg",
-    "./hike.jpg"
+    "/people/pose.jpg",
+    "/people/Lpose.jpg",
+    "/people/beach.jpg",
+    "/people/3man.jpg", 
+    "/people/playing.jpg",
+    "/hike.jpg"
   ];
   
   gsap.registerPlugin(ScrollTrigger);
@@ -97,8 +97,8 @@ const Home = () => {
 
 
         <div className='absolute bottom-[10vh] flex items-center justify-center flex-col'>
-          <img src='./mouse.png' className="w-16 hidden md:block" alt="Mouse" />
-          <img ref={point} src="./arrow.png" className="w-12 m-2" alt="Arrow" />
+          <img src='/mouse.png' className="w-16 hidden md:block" alt="Mouse" />
+          <img ref={point} src="/arrow.png" className="w-12 m-2" alt="Arrow" />
         </div>
       </div>
 
@@ -106,7 +106,7 @@ const Home = () => {
       <div className='bg-dark h-[100vh] flex flex-col md:flex-row justify-center items-center'>
         <div className='m-0 p-0 w-full md:w-[50vw] flex justify-center items-center'>
           <img 
-            src="./people/sandLogo.jpg" 
+            src="/people/sandLogo.jpg" 
             className="w-[250px] sm:w-[300px] md:w-[400px] lg:w-[500px] rounded-full md:rounded-lg shadow-lg mx-2" 
             alt="Sand" 
           />
@@ -134,32 +134,32 @@ const Home = () => {
       <div className="flex bg-dark text-lime-50 h-[45vh] py-20 mb-20">
         <div className="image-container flex space-x-4 overflow-hidden w-full">
           <img
-            src="./people/pose.jpg"
+            src=public\people\pose.JPG
             className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
             alt="Pose"
           />
           <img
-            src="./people/Lpose.jpg"
+            src="/people/Lpose.jpg"
             className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
             alt="Lpose"
           />
           <img
-            src="./people/beach.jpg"
+            src="/people/beach.jpg"
             className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
             alt="Beach"
           />
           <img
-            src="./people/3man.jpg"
+            src="/people/3man.jpg"
             className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
             alt="3man"
           />
           <img
-            src="./people/playing.jpg"
+            src="/people/playing.jpg"
             className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
             alt="Playing"
           />
           <img
-            src="./hike.jpg"
+            src="/hike.jpg"
             className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
             alt="Hike"
           />
@@ -175,7 +175,7 @@ const Home = () => {
           <div className='flex flex-col md:flex-row items-center gap-10'>
             {/* Testimonial Image */}
             <img
-              src='./people/pp1.jpg' 
+              src='/people/pp1.jpg' 
               alt='Person 1' 
               className='w-[150px] h-[150px] object-cover rounded-full border-2 border-light'
             />
@@ -189,7 +189,7 @@ const Home = () => {
           <div className='flex flex-col md:flex-row items-center gap-10'>
             {/* Testimonial Image - First on mobile, last on desktop */}
             <img 
-              src='./people/pp2.jpg' 
+              src='/people/pp2.jpg' 
               alt='Person 2' 
               className='md:order-last w-[150px] h-[150px] object-cover rounded-full border-2 border-light'
             />
@@ -203,7 +203,7 @@ const Home = () => {
           <div className='flex flex-col md:flex-row items-center gap-10'>
             {/* Testimonial Image */}
             <img 
-              src='./people/pp3.jpg' 
+              src='/people/pp3.jpg' 
               alt='Person 3' 
               className='w-[150px] h-[150px] object-cover rounded-full border-2 border-light'
             />
