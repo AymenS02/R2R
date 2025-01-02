@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 z-999 w-full bg-dark text-white p-4 shadow-lg border-b-2 border-light">
+    <nav className="font-merriweather fixed top-0 left-0 z-999 w-full bg-dark text-white p-4 shadow-lg border-b-2 border-light">
       <div className="flex justify-between items-center w-full px-4 py-2">
         <img src='./logo.png' className="w-10 hidden sm:block" alt="Logo" />
         <ul className="flex space-x-4">

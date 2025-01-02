@@ -27,7 +27,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center py-12 px-4 pt-16">
+    <div className="font-merriweather min-h-screen bg-black flex flex-col items-center py-12 px-4 pt-16">
       {/* Content Section */}
       <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between m-12">
         {/* Left Side: R2R Description */}

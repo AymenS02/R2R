@@ -10,6 +10,9 @@ export default {
         dark: '#0b0b0b',
         light: '#fefefe',
       },
+      fontFamily: {
+        merriweather: ['"Merriweather"', 'serif'], // Add the Merriweather font here
+      },
     },
   },
   plugins: [],

@@ -1,18 +1,35 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const leftImgRef = useRef(null);
   const rightImgRef = useRef(null);
   const textTitle = useRef(null);
   const point = useRef(null);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
 
   
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
+
+    if (!localStorage.getItem('popupShown')) {
+      // Show the pop-up after 10 seconds
+      setTimeout(() => {
+        setIsPopupVisible(true);
+        gsap.fromTo('.popup', { opacity: 0 }, { opacity: 1, duration: 1 });
+      }, 10000);
+
+      // Mark the pop-up as shown in localStorage
+      localStorage.setItem('popupShown', 'true');
+    }
+
     const timeline = gsap.timeline();
 
     // Animate left and right images simultaneously
@@ -74,8 +91,48 @@ const Home = () => {
     
   }, []);
 
+  const closePoster = () => {
+    gsap.to(".poster", {
+      opacity: 0,
+      scale: 0.5,
+      duration: 0.3,
+      ease: "power2.in",
+      onComplete: () => setIsPopupVisible(false),
+    });
+  };
   return (
-    <div className="overflow-hidden ">
+    <div className="overflow-hidden font-merriweather">
+
+      <div className="relative">
+
+        {isPopupVisible  && (
+          <div className="poster fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-gray-800 border-2 border-white p-6 rounded-lg shadow-lg w-[90%] max-w-md relative">
+              <h1 className="text-white font-bold text-center pb-4 text-xl">Ummrah Trip 2025</h1>
+              <button
+                className="absolute top-0 right-2 text-white text-2xl"
+                onClick={closePoster}
+              >
+                &times;
+              </button>
+              <img
+                src="/ummrah1.jpg"
+                alt="Sign Up Poster"
+                className="w-full rounded-md mb-4 border border-white"
+              />
+              {/* <h2 className="text-2xl text-center font-bold mb-4">
+                Sign Up Now
+              </h2> */}
+              <button
+                className="bg-blue-500 text-white font-bold px-4 py-2 rounded-lg w-full"
+                onClick={() => navigate('/ummrah')}
+              >
+                Secure Your Place Now!
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* This is the first section */}
       <div className='flex bg-dark h-screen justify-center items-center flex-col'>
@@ -113,7 +170,7 @@ const Home = () => {
             </div>
             <button
               className="bg-dark text-light mt-4 p-2 w-[80%] sm:w-[60%] md:w-[200px] rounded-lg transition transform hover:scale-105 border-2 border-light"
-              onClick={() => window.location.href = '/about'}
+              onClick={() => navigate('/about')}
             >
               Learn More
             </button>
@@ -208,7 +265,7 @@ const Home = () => {
 
           <button 
             className='bg-dark text-light p-2 rounded-lg transition transform hover:scale-105 mt-10 border-light border-2' 
-            onClick={() => window.location.href = '/contact'}>
+            onClick={() => navigate('/contact')}>
             Contact Us
           </button>
 

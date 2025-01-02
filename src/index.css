@@ -47,6 +47,11 @@ nav {
     border-radius: 50%;
 }
 
+.photosSquare {
+    width: 500px;
+    border-radius: 5%;
+}
+
 .right-image {
     margin-left: 15.5em;
 }

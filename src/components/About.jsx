@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-//import './App.css'; // Add your CSS file
 
 const About = () => {
   const leftImageRef = useRef(null);
@@ -80,9 +79,9 @@ const About = () => {
   }, []);
 
   return (
-    <div className="h-screen bg-dark flex justify-center items-center flex-col containerItem"> 
+    <div className="font-merriweather h-screen bg-dark flex justify-center items-center flex-col containerItem"> 
       <div className="section">
-        <div className="details-left" ref={firstTextRef}>
+        <div className="" ref={firstTextRef}>
           <h2>Our Mission</h2>
           <p>
             At <i>ЯIIR</i>, we aim to awaken the desire already within you to do something meaningful. By hosting events and building a strong community, we&apos;re proving that our faith isn&apos;t in conflict with the modern West, but can thrive without compromise.
@@ -92,7 +91,7 @@ const About = () => {
       </div>
 
       <div className="section">
-        <div className="details-right" ref={secondTextRef}>
+        <div className="" ref={secondTextRef}>
           <h2>What is R2R?</h2>
           <p>
             R2R stands for &apos;Road To Success&apos;, this brand symbolizes the initial road everyone has to go through in our lives, and from that road, we keep driving to the point of success, with the hope, trust, and belief that God almighty will take us there.
@@ -101,25 +100,21 @@ const About = () => {
         <img ref={leftImageRef} className="left-image" src="/logo.png" alt="Logo" />
       </div>
 
-      <div className="regular-section" ref={thirdTextRef}>
-        <h2>What We Stand By</h2>
-        <div className="split">
-          <div>
-            <p className="mb-4">Our morals, values, and way of life all stem from one thing - Islam. We as Muslims strive to become better by coming closer to God.</p>
-            <p>The relentless drive, discipline, and enthusiasm are aspects and characteristics that we as Muslims uphold.</p>
-          </div>
-          <img src="/hike.jpg" alt="Group of people hiking" />
+      <div className="gap-4 section">
+        <div className="" ref={thirdTextRef}>
+          <h2>What We Stand By</h2>
+          <p className="mb-4">Our morals, values, and way of life all stem from one thing - Islam. We as Muslims strive to become better by coming closer to God.</p>
+          <p>The relentless drive, discipline, and enthusiasm are aspects and characteristics that we as Muslims uphold.</p>
         </div>
+        <img className="photosSquare" src="/hike.JPG" alt="Group of people hiking" />
       </div>
 
-      <div className="regular-section">
-        <h2>Who inspires us?</h2>
-        <div className="split">
-          <img src="/people/pose.jpg" alt="Group of people standing" />
-          <div>
-            <p>Our inspiration and who we look up to is the Prophet Muhammed, <i>Peace be upon him</i></p>
-            <p>The Prophet, peace and blessings be upon him, said, <strong><i>“A man is upon the religion of his best friend, so let one of you look at whom he befriends.”</i></strong> Source: Sunan al-Tirmidhī 2378</p>
-          </div>
+      <div className="section">
+        <img className="photosSquare" src="/people/pose.JPG" alt="Group of people standing" />
+        <div className="">
+          <h2>Who inspires us?</h2>
+          <p className="mb-4">Our inspiration and who we look up to is the Prophet Muhammed, <i>Peace and Blessings be upon him.</i></p>
+          <p>The Prophet, peace and blessings be upon him, said, <strong><i>“A man is upon the religion of his best friend, so let one of you look at whom he befriends.”</i></strong> Source: Sunan al-Tirmidhī 2378</p>
         </div>
       </div>
     </div>
