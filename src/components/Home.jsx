@@ -180,29 +180,38 @@ const Home = () => {
 
 
       {/* This is the third section */}
-      <div className="flex bg-dark mb-20 box-border border-4 border-blue-500 p-0 w-[100vw] h-[100vh] overflow-hidden">
-        <div className='container'>
-          <div className='indicator'></div>
-          <div className='gallery'>
-            <div className='gallery-item'>
-              <img src='/people/pose.JPG' alt='Person 1' />
-            </div>
-            <div className='gallery-item'>
-              <img src='/people/Lpose.JPG' alt='Person 1' />
-            </div>
-            <div className='gallery-item'>
-              <img src='/people/beach.JPG' alt='Person 1' />
-            </div>
-            <div className='gallery-item'>
-              <img src='/people/3man.JPG' alt='Person 1' />
-            </div>
-            <div className='gallery-item'>
-              <img src='/people/playing.JPG' alt='Person 1' />
-            </div>
-            <div className='gallery-item'>
-              <img src='/hike.JPG' alt='Person 1' />
-            </div>
-          </div>
+      <div className="flex bg-dark mb-20  p-0 w-[100vw] overflow-hidden ">
+      <div className="image-container flex space-x-4 overflow-hidden w-full">
+          <img
+            src="/people/pose.JPG"
+            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
+            alt="Pose"
+          />
+          <img
+            src="/people/Lpose.JPG"
+            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
+            alt="Lpose"
+          />
+          <img
+            src="/people/beach.JPG"
+            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
+            alt="Beach"
+          />
+          <img
+            src="/people/3man.JPG"
+            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
+            alt="3man"
+          />
+          <img
+            src="/people/playing.JPG"
+            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
+            alt="Playing"
+          />
+          <img
+            src="/hike.JPG"
+            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
+            alt="Hike"
+          />
         </div>
       </div>
 
