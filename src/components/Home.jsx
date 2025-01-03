@@ -180,38 +180,29 @@ const Home = () => {
 
 
       {/* This is the third section */}
-      <div className="flex bg-dark text-lime-50 h-[45vh] py-20 mb-20">
-        <div className="image-container flex space-x-4 overflow-hidden w-full">
-          <img
-            src="/people/pose.JPG"
-            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
-            alt="Pose"
-          />
-          <img
-            src="/people/Lpose.JPG"
-            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
-            alt="Lpose"
-          />
-          <img
-            src="/people/beach.JPG"
-            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
-            alt="Beach"
-          />
-          <img
-            src="/people/3man.JPG"
-            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
-            alt="3man"
-          />
-          <img
-            src="/people/playing.JPG"
-            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
-            alt="Playing"
-          />
-          <img
-            src="/hike.JPG"
-            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
-            alt="Hike"
-          />
+      <div className="flex bg-dark mb-20 box-border border-4 border-blue-500 p-0 w-[100vw] h-[100vh] overflow-hidden">
+        <div className='container'>
+          <div className='indicator'></div>
+          <div className='gallery'>
+            <div className='gallery-item'>
+              <img src='/people/pose.JPG' alt='Person 1' />
+            </div>
+            <div className='gallery-item'>
+              <img src='/people/Lpose.JPG' alt='Person 1' />
+            </div>
+            <div className='gallery-item'>
+              <img src='/people/beach.JPG' alt='Person 1' />
+            </div>
+            <div className='gallery-item'>
+              <img src='/people/3man.JPG' alt='Person 1' />
+            </div>
+            <div className='gallery-item'>
+              <img src='/people/playing.JPG' alt='Person 1' />
+            </div>
+            <div className='gallery-item'>
+              <img src='/hike.JPG' alt='Person 1' />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -264,7 +255,7 @@ const Home = () => {
           </div>
 
           <button 
-            className='bg-dark text-light p-2 rounded-lg transition transform hover:scale-105 mt-10 border-light border-2' 
+            className='bg-dark text-light p-2 mb-20 rounded-lg transition transform hover:scale-105 mt-10 border-light border-2' 
             onClick={() => navigate('/contact')}>
             Contact Us
           </button>
