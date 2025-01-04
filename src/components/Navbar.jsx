@@ -17,3 +17,10 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+// change contact to redirect to email or whatsapp
+// secure your place should show the deals and the front and back poster
+// might change about page to "why us?"
+// fix the photo gallery on the home page
+// fix black screen for logo home page
