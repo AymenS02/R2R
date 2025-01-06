@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useNavigate } from 'react-router-dom';
@@ -17,8 +17,11 @@ const Home = () => {
   
   gsap.registerPlugin(ScrollTrigger);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
 
+    const leftImg = leftImgRef.current;
+    const rightImg = rightImgRef.current;
+    if (leftImgRef.current && rightImgRef.current) {
     if (!localStorage.getItem('popupShown')) {
       // Show the pop-up after 10 seconds
       setTimeout(() => {
@@ -34,14 +37,14 @@ const Home = () => {
 
     // Animate left and right images simultaneously
     timeline.fromTo(
-      leftImgRef.current,
+      leftImg,
       { x: '-100vw', opacity: 0 },
       { x: '0%', opacity: 1, duration: 5.5, ease: 'power3.out' },
       0 // Start at the beginning of the timeline
     );
 
     timeline.fromTo(
-      rightImgRef.current,
+      rightImg,
       { x: '100vw', opacity: 0 },
       { x: '0%', opacity: 1, duration: 5.5, ease: 'power3.out' },
       0 // Start at the beginning of the timeline (same time as leftImg)
@@ -69,26 +72,12 @@ const Home = () => {
       '-=1' // Start 1 second after textTitle animation
     );
 
-    const container = document.querySelector(".image-container");
-    const containerWidth = container.scrollWidth; // Total width of the container
-  
-    // Duplicate the images to create a seamless infinite scroll
-    gsap.to(container, {
-      x: `-${containerWidth / 2}px`, // Animate to half of the container width
-      duration: 20, // Adjust speed as needed
-      repeat: -1, // Infinite repetition
-      ease: "linear", // Smooth linear animation
-      modifiers: {
-        x: gsap.utils.wrap(-containerWidth, 0), // Wrap the animation seamlessly
-      },
-    });
-
     // Optional cleanup if animations need to stop when the component unmounts
     return () => {
       timeline.kill();
-      gsap.killTweensOf(container);
+      gsap.killTweensOf([leftImg, rightImg]);
     };
-    
+  }
   }, []);
 
   const closePoster = () => {
@@ -178,42 +167,10 @@ const Home = () => {
         </div>
       </div>
 
-
-      {/* This is the third section */}
-      <div className="flex bg-dark mb-20  p-0 w-[100vw] overflow-hidden ">
-      <div className="image-container flex space-x-4 overflow-hidden w-full">
-          <img
-            src="/people/pose.JPG"
-            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
-            alt="Pose"
-          />
-          <img
-            src="/people/Lpose.JPG"
-            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
-            alt="Lpose"
-          />
-          <img
-            src="/people/beach.JPG"
-            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
-            alt="Beach"
-          />
-          <img
-            src="/people/3man.JPG"
-            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
-            alt="3man"
-          />
-          <img
-            src="/people/playing.JPG"
-            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
-            alt="Playing"
-          />
-          <img
-            src="/hike.JPG"
-            className="h-[400px] snap-center flex-shrink-0 border-2 border-black"
-            alt="Hike"
-          />
-        </div>
+            {/* This is the third section */}
+            <div className="flex bg-dark mb-20  p-0 w-[100vw] overflow-hidden ">
       </div>
+
 
       {/* This is the fourth section */}
       <div className='bg-dark min-h-[85vh]'>
