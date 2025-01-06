@@ -59,13 +59,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
-      <div className="mt-20 w-full max-w-6xl">
-        <div className="flex gap-6 md:justify-start justify-center">
-          <img className="w-10" src="/ig.png" />
-          <img className="w-10" src="/yt.png" />
-        </div>
-      </div>
     </div>
   );
 };

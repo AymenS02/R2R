@@ -4,6 +4,8 @@ import About from './components/About.jsx';
 import Contact from './components/Contact.jsx';
 import Home from './components/Home.jsx';
 import Ummrah from './components/Ummrah.jsx';
+import Footer from './components/Footer.jsx';
+
 const App = () => {
   return (
     <Router>
@@ -16,6 +18,7 @@ const App = () => {
           <Route path="/ummrah" element={<Ummrah />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 };

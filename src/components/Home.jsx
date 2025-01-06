@@ -90,7 +90,7 @@ const Home = () => {
     });
   };
   return (
-    <div className="overflow-hidden font-merriweather">
+    <div className="overflow-hidden font-merriweather mb-[6rem]">
 
       <div className="relative">
 
@@ -188,7 +188,7 @@ const Home = () => {
             {/* Testimonial Text */}
             <div className='text-light text-lg max-w-[500px]'>
               <p>&quot;This retreat was a life-changing experience for me. The brotherhood, the spiritual growth, and the sense of community made it unforgettable.&quot;</p>
-              <span className='block mt-4 text-sm font-bold'>- Brother Sami</span>
+              <span className='block mt-4 text-sm font-bold'>- Brother Sami (Age: 21)</span>
             </div>
           </div>
 
@@ -202,7 +202,7 @@ const Home = () => {
             {/* Testimonial Text */}
             <div className='text-light text-lg max-w-[500px] text-right'>
               <p>&quot;Attending the retreat was one of the best decisions I&apos;ve ever made. It brought me closer to my brothers and deepened my spiritual connection. I left feeling refreshed and inspired.&quot;</p>
-              <span className='block mt-4 text-sm font-bold'>- Brother Shamas</span>
+              <span className='block mt-4 text-sm font-bold'>- Brother Shamas (Age: 24)</span>
             </div>
           </div>
 
@@ -216,7 +216,7 @@ const Home = () => {
             {/* Testimonial Text */}
             <div className='text-light text-lg max-w-[500px]'>
               <p>&quot;The retreat provided a perfect balance of reflection, camaraderie, and growth. It helped me find clarity and a sense of purpose. I’m grateful for the bond we built.&quot;</p>
-              <span className='block mt-4 text-sm font-bold'>- Brother Zaheer</span>
+              <span className='block mt-4 text-sm font-bold'>- Brother Zaheer (Age: 18)</span>
             </div>
           </div>
 
@@ -228,6 +228,7 @@ const Home = () => {
 
         </div>
       </div>
+      
     </div>
   );
 };

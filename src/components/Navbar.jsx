@@ -9,7 +9,7 @@ const Navbar = () => {
           <li><Link to="/" className="hover:underline">Home</Link></li>
           <li><Link to="/about" className="hover:underline">About</Link></li>
           <li><Link to="/contact" className="hover:underline">Contact</Link></li>
-          <l1><Link to="/ummrah" className="bg-blue-600 border-2 rounded-md p-2 ml-2 hover:bg-black transition duration-300 ease-in-out">Secure Your Place</Link></l1>
+          <l1><Link to="/ummrah" className="bg-green-600 border-2 rounded-md p-2 ml-2 hover:bg-black transition duration-300 ease-in-out">Secure Your Place</Link></l1>
         </ul>
       </div>
     </nav>

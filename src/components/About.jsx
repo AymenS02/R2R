@@ -79,7 +79,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="font-merriweather h-screen bg-dark flex justify-center items-center flex-col containerItem"> 
+    <div className="font-merriweather h-screen bg-dark flex justify-center items-center flex-col containerItem mb-[6rem]"> 
       <div className="section">
         <div className="" ref={firstTextRef}>
           <h2>Our Mission</h2>
