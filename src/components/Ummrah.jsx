@@ -17,13 +17,13 @@ export default function Ummrah() {
         <div className="flex gap-4">
           <img
             className="w-[100px] md:w-[400px] border-2 border-black rounded-2xl cursor-pointer"
-            src="public/ummrah1.jpg"
+            src="/ummrah1.jpg"
             alt="Ummrah Poster"
             onClick={() => window.open('public/ummrah1.jpg', '_blank')}
           />
           <img
             className="w-[100px] md:w-[400px] border-2 border-black rounded-2xl cursor-pointer"
-            src="public/ummrah2.jpg"
+            src="/ummrah2.jpg"
             alt="Ummrah Poster"
             onClick={() => window.open('public/ummrah2.jpg', '_blank')}
           />
@@ -44,9 +44,6 @@ export default function Ummrah() {
           </div>
           <div className="text-sm mb-4">
             SHARING WITH 3 OTHER PEOPLE
-          </div>
-          <div className="text-sm mb-6">
-            $1500 deposit
           </div>
         </div>
 
@@ -82,7 +79,7 @@ export default function Ummrah() {
         <button 
         onClick={handleEmailClick}
         className="w-full py-2 px-4 bg-green200 bg-green-200  text-black rounded-md hover:bg-green-400 transition-colors">
-          BOOK NOW
+          CONTACT US NOW
         </button>
       </div>
 
