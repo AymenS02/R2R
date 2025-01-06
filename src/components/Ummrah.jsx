@@ -79,7 +79,7 @@ export default function Ummrah() {
         <button 
         onClick={handleEmailClick}
         className="w-full py-2 px-4 bg-green200 bg-green-200  text-black rounded-md hover:bg-green-400 transition-colors">
-          CONTACT US NOW
+          CONTACT US
         </button>
       </div>
 
