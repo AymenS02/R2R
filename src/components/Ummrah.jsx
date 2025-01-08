@@ -15,18 +15,21 @@ export default function Ummrah() {
       <div className="flex flex-col bg-green-800 justify-center gap-2 items-center border-2 border-white rounded-2xl m-[4vw]">
         <h2 className="p-4">*Full package including flights from Canada, Visa, Hotels & ground transfers </h2>
         <div className="flex gap-4">
+        <a href="/ummrah1.jpg" target="_blank">
           <img
             className="w-[100px] md:w-[400px] border-2 border-black rounded-2xl cursor-pointer"
             src="/ummrah1.jpg"
             alt="Ummrah Poster"
-            onClick={() => window.open('public/ummrah1.jpg', '_blank')}
           />
+        </a>
+        <a href="/ummrah2.jpg" target="_blank">
           <img
             className="w-[100px] md:w-[400px] border-2 border-black rounded-2xl cursor-pointer"
             src="/ummrah2.jpg"
             alt="Ummrah Poster"
-            onClick={() => window.open('public/ummrah2.jpg', '_blank')}
           />
+        </a>
+
         </div>
 
       <div className="relative w-64 bg-gradient-to-b from-green-600 to-green-800 border-white border rounded-lg p-6 text-white m-10">

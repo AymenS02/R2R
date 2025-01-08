@@ -3,9 +3,16 @@ const Footer = () => (
     {/* Left Column (Social Media Links) */}
     <div className="flex flex-col items-start mb-4 md:mb-0">
       <div className="flex gap-4 mb-4 text-sm">
-          <img href="https://www.instagram.com/theroad2righteousness?igsh=cmZjdjN4Y3N4aGZ4&utm_source=qr" target="_blank" rel="noopener noreferrer" className="w-8" src="/ig.png" />
-          <img href="https://youtube.com/@road2rightouesness?si=_JEdOx6w-D3M-z5J" target="_blank" rel="noopener noreferrer" className="w-8" src="/yt.png" />
-          <img href="https://www.tiktok.com/@theroad2righteousness?_t=ZM-8spPuIzukrd&_r=1" target="_blank" rel="noopener noreferrer" className="w-6" src="/tiktok.png" />
+      <a href="https://www.instagram.com/theroad2righteousness?igsh=cmZjdjN4Y3N4aGZ4&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <img className="w-8" src="/ig.png" alt="Instagram" />
+      </a>
+      <a href="https://youtube.com/@road2rightouesness?si=_JEdOx6w-D3M-z5J" target="_blank" rel="noopener noreferrer">
+        <img className="w-8" src="/yt.png" alt="YouTube" />
+      </a>
+      <a href="https://www.tiktok.com/@theroad2righteousness?_t=ZM-8spPuIzukrd&_r=1" target="_blank" rel="noopener noreferrer">
+        <img className="w-6" src="/tiktok.png" alt="TikTok" />
+      </a>
+
       </div>
       <p className="text-sm mt-3">© 2025 Your Company. All rights reserved.</p>
     </div>
